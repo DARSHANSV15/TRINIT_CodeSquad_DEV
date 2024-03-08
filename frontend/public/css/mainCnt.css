@@ -1,0 +1,12 @@
+.main-cnt-flex{
+    display: flex;
+    
+}
+.main-cnt-flex .main-cnt{
+    background-color: white;
+    flex-grow: 1;
+    border: 1px solid lightgrey;
+    border-top: 0;
+    border-radius: 0.2rem 0.2rem 0 0;
+    margin: 0 0.25rem;
+}

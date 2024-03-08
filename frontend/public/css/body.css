@@ -1,0 +1,48 @@
+*{
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sidebar-nav{
+    height: calc(100vh - 3rem);
+    display: none;
+    visibility: hidden;
+}
+
+.container-fluid .navbar-toggler{
+    border: 0;
+    border-radius: 0;
+}
+
+.container-fluid .navbar-toggler :focus{
+    box-shadow: 0 0 0 0;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .sidebar{
+        display: none;
+        visibility: hidden;
+    }
+    .sidebar-nav{
+        display: block;
+        visibility: unset;
+    }
+    
+  }
+
+  @media screen and (max-width: 850px){
+    .login-img{
+        display: none;
+        visibility: hidden;
+    }
+    .login-contain .login-form{
+        
+        border: 1px solid black;
+        background-image: linear-gradient(0deg,white,white);
+    }
+    .login-contain .login-form h2{
+        color: black;
+    }
+
+  }

@@ -1,0 +1,27 @@
+.login-img{
+    width: 50vw;
+}
+
+.login-contain{
+    display: flex;
+}
+
+.login-form{
+    background-image: linear-gradient(45deg, rgb(56,183,143),rgb(57,176,159), rgb(58,168,173) );
+    margin: 1px;
+    height: 99.6vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form h2{
+    color: white ;
+}
+
+.login-form .card-body{
+    display: block;
+    flex-grow: 0;
+}
