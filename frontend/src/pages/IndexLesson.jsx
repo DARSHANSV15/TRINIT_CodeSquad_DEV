@@ -5,7 +5,7 @@ import LessonCard from '../components/LessonCard';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 
-const IndexLesson = () => {
+const IndexLesson = ({user}) => {
   const [lessons, setLessons] = useState([]);
 
   useEffect(() => {
@@ -25,9 +25,9 @@ const IndexLesson = () => {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar user={user}></Navbar>
       <div className='main-cnt-flex'>
-        <Sidebar></Sidebar>
+        <Sidebar user={user}></Sidebar>
         <div className='main-cnt'>
           <div>
             <h2>Lesson List</h2>

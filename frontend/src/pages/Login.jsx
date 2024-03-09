@@ -86,6 +86,7 @@ const Login = () => {
                                 <input type="password" required placeholder="Password" id="password" className="form-control" name="password" value={user.password} onChange={handleChange}/>
                                 <div className="invalid-feedback">Enter Password</div>
                             </div>
+                           
                             <button className="edit-btn btn btn-primary mb-2">SUBMIT</button>
                         
                         </form>

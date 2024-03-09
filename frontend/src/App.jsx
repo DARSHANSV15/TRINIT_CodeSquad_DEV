@@ -16,6 +16,7 @@ import LessonDetails from './pages/LessonDetails';
 function App() {
   const navigate= useNavigate();
   let [user,setUser] = useState(null);
+  let [newUser,setNewUser] = useState(false);
 
   useEffect(()=>{
     const getUser=()=>{
@@ -42,12 +43,18 @@ function App() {
       })
       .catch((e)=>{
         console.log(e.message);
+        setNewUser(true);
       })
     }
     getUser();
   },[])
 
   
+  if (user === null && !newUser ) {
+    return null;
+  }
+  
+
   return (
     <Routes>
       <Route path='/' element={<Home user={user}/>}/>
@@ -57,7 +64,7 @@ function App() {
       <Route path='/role' element={<UserForm user={user}/>}/>
       <Route path='/lesson/create' element={<CreateLesson user={user} />}/>
       <Route path='/lesson' element={<IndexLesson user={user}/>}/>
-      <Route path="/lesson/:lessonId" element={<LessonDetails/>} />
+      <Route path="/lesson/:lessonId" element={<LessonDetails user={user}/>} />
     </Routes>
   )
 }

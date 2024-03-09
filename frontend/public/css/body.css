@@ -2,6 +2,16 @@
    
 }
 
+.login-signup{
+    position: absolute;
+    right: 0;
+    top: 1rem
+}
+
+.navbar-brand{
+    margin-right: 50vw
+}
+
 body{
     overflow: hidden;  
     margin:0; 

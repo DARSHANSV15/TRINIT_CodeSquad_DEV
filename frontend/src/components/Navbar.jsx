@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({user}) => {
+    // console.log(user);
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-light-subtle" style={{ lineHeight: "3rem" }}>
             <div className="container-fluid">
@@ -9,11 +10,14 @@ const Navbar = () => {
                     {/* <span className="navbar-toggler-icon"></span> */}
                     <i className="fa-solid fa-bars" style={{ fontSize: "1.25rem" }}></i>
                 </button>
-                <a className="navbar-brand" href="#">Navbar</a>
-                <div className="" >
-                    <Link className='btn btn-danger m-1' to={"/signup"}>Sign Up</Link>
-                    <Link className='btn btn-danger m-1' to={"/login"}>Log In</Link>
-                </div>
+                <a className="navbar-brand text-primary" href="/">Lingua Connect</a>
+                
+                    {(!user )?<div className="ms-5 ps-5 login-signup" >
+                    <Link className='btn btn-outline-primary m-1 ms-5' to={"/signup"}>Sign Up</Link>
+                    <Link className='btn btn-outline-primary m-1' to={"/login"}>Log In</Link>
+                    </div>: <div className='btn btn-outline-dark rounded-pill'><img src={user.photo} alt="" referrerPolicy="no-referrer" style={{height:"2rem",width:"2rem",margin:"0px",borderRadius:"50%"}}/> {user.username}</div>}
+                    
+                
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <div className='sidebar-nav'>

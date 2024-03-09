@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Lesson = require('../models/lesson'); // Assuming you have a Lesson model defined
 const Tutor=require("../models/tutor");
+const { FRONT_URL } = require('../config/url');
 
 
 router.get('/', async (req, res) => {
@@ -40,6 +41,7 @@ router.post('/create', async (req, res) => {
             message: 'Lesson created successfully',
             lesson: savedLesson,
         });
+        
     } catch (error) {
         // Handle errors and respond with an error message
         console.error('Error creating lesson:', error.message);

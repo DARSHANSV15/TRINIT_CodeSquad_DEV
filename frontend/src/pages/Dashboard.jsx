@@ -2,11 +2,11 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 
-const Dashboard = () => {
+const Dashboard = ({user}) => {
   return (<>
-    <Navbar></Navbar>
+    <Navbar user={user}></Navbar>
     <div className='main-cnt-flex'>
-        <Sidebar></Sidebar>
+        <Sidebar user={user}></Sidebar>
         <div className='main-cnt'></div>
     </div>
   </>

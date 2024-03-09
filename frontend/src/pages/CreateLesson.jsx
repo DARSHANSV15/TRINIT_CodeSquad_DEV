@@ -3,8 +3,11 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import { BACK_URL } from '../../config';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const CreateLesson = ({user}) => {
+    let navigate=useNavigate();
+
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -32,6 +35,7 @@ const CreateLesson = ({user}) => {
           .then((response) => {
             // Log the server response (you can handle it according to your needs)
             console.log('Server response:', response.data);
+            navigate("/lesson");
           })
           .catch((error) => {
             // Handle error (e.g., show an error message to the user)
@@ -53,9 +57,9 @@ const CreateLesson = ({user}) => {
 
     return (<>
     
-    <Navbar></Navbar>
+    <Navbar user={user}></Navbar>
     <div className='main-cnt-flex'>
-        <Sidebar></Sidebar>
+        <Sidebar user={user}></Sidebar>
         <div className='main-cnt'>
 
         <div className=" mt-3">

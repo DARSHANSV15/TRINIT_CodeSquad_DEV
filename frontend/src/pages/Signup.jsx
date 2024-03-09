@@ -27,7 +27,7 @@ const Signup = () => {
             },
           }) .then((res)=>{
             console.log(res);
-            navigate("/");
+            navigate("/role");
           }) .catch((err)=>{
             console.log(err);
           })
@@ -64,7 +64,7 @@ const Signup = () => {
                         <hr />
                         <form noValidate className="needs-validation" method="POST" onSubmit={handleSubmit}>
                             
-                            <div className="mb-1">
+                            <div className="mb-3">
                                 <label htmlFor="username" className="form-label">Username: </label>
                                 <div className="input-group mb-1">
                                     <span className="input-group-text" id="basic-addon1">@</span>
@@ -72,7 +72,7 @@ const Signup = () => {
                                 </div>
                                 <div className="invalid-feedback">Enter username</div>
                             </div>
-                            <div className='mb-1'>
+                            <div className='mb-3'>
                                 <label htmlFor="email" className='form-label'>Email: </label>
                                 <input type="email" required id='email' name='email' value={user.email} onChange={handleChange} className='form-control' placeholder='email'/>
                             </div>
@@ -80,6 +80,13 @@ const Signup = () => {
                                 <label htmlFor="password" className="form-label">Password: </label>
                                 <input type="password" required placeholder="Password" id="password" className="form-control" name="password" value={user.password} onChange={handleChange}/>
                                 <div className="invalid-feedback">Enter Password</div>
+                            </div>
+                            <div className='mb-3'>
+                              <label htmlFor="role">Register As: </label>
+                            <select class="form-select" id='role' aria-label="Default select example">
+                              <option selected value="tutor">Tutor</option>
+                              <option value="learner">Learner</option>
+                            </select>
                             </div>
                             <button className="edit-btn btn btn-primary mb-2">SUBMIT</button>
                         
