@@ -15,10 +15,9 @@ const UserForm = () => {
         languages: '',
     };
 
-    // State variable for the tutor
+   
     const [tutor, setTutor] = useState(initialTutorState);
 
-    // Function to handle changes in the tutor state
     const handleTutorChange = (e) => {
         const { name, value } = e.target;
         setTutor((prevTutor) => ({
@@ -27,22 +26,22 @@ const UserForm = () => {
         }));
     };
 
-    // Function to handle form submission
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your form submission logic here using the tutor state
+        
         console.log("Tutor State:", tutor);
         sendTutorData(tutor);
-        // Reset the form after submission
+        
         setTutor(initialTutorState);
     };
 
     const sendTutorData = async (tutorData) => {
         try {
-          // Convert languages to an array
+          
           const languagesArray = tutorData.languages.split(',').map(language => language.trim());
       
-          // Create the tutor object with the specified schema
+          
           const tutorObject = {
             fullName: tutorData.fullName,
             DOB: tutorData.DOB,
@@ -53,21 +52,21 @@ const UserForm = () => {
             languages: languagesArray,
           };
       
-          // Send Axios request to "/register"
+          
           const response = await axios.post(BACK_URL+'/tutor/register', tutorObject, {
             headers: {
               'Content-Type': 'application/json',
             },
           });
       
-          // Log the server response
+          
           console.log(response.data);
       
-          // Return the server response or handle it as needed
+          
           return response.data;
         } catch (error) {
           console.error('Error submitting tutor data:', error);
-          // Handle the error or return an error message
+         
           throw new Error('Error submitting tutor data');
         }
       };
