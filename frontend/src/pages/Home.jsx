@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
-
 import "../../public/css/mainCnt.css"
+import Hero from '../components/Hero'
 
 const Home = ({user}) => {
   return (<>
@@ -10,7 +10,9 @@ const Home = ({user}) => {
     <h1>{user?`${ user.username}`:"none"}</h1>
     <div className='main-cnt-flex'>
         <Sidebar></Sidebar>
-        <div className='main-cnt'></div>
+        <div className='main-cnt'>
+          <Hero></Hero>
+        </div>
     </div>
   </>
   )
