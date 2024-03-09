@@ -21,7 +21,7 @@ passport.use(new GoogleStrategy({
       if(!user){
         let newUser=new User({
           googleId: profile.id,
-          name: profile.displayName,
+          username: profile.displayName,
           photo: profile.photos[0].value,
         })
         newUser.save()
@@ -55,7 +55,7 @@ async function(request,accessToken, refreshToken, profile, cb) {
     if(!user){
       let newUser=new User({
         githubId: profile.id,
-        name: profile.displayName,
+        username: profile.displayName,
         photo: profile.photos[0].value,
       })
       newUser.save()

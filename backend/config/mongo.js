@@ -6,5 +6,6 @@ main().then((res) => {
     console.log(err);
 }) 
 async function main() {
-    await mongoose.connect(process.env.MONGO_URL);
+    // await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect("mongodb://127.0.0.1:27017/triNit");
 }

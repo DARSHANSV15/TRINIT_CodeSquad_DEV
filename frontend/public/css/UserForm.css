@@ -1,0 +1,10 @@
+.radio-parent{
+    display: flex;
+}
+/* .radio-parent input{
+    display: none;
+} */
+.radio-parent input:checked + .radio-parent .label{
+    color: rgb(255, 255, 255);
+    /* //not working */
+}

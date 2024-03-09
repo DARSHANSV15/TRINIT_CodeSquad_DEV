@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import "../../public/css/login.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -9,6 +9,8 @@ import { BACK_URL } from '../../config';
 // 
 const Signup = () => {
     let [user,setUser] =useState({username:"", password:"",email:""});
+
+    const navigate=useNavigate();
 
 
       let localSignup=(user)=>{
@@ -25,6 +27,7 @@ const Signup = () => {
             },
           }) .then((res)=>{
             console.log(res);
+            navigate("/");
           }) .catch((err)=>{
             console.log(err);
           })
