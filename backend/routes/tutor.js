@@ -6,7 +6,7 @@ const { isLoggedIn } = require('../middlewares');
 const { FRONT_URL } = require('../config/url');
 
 
-router.post('/register', isLoggedIn, async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
       
       const {
@@ -17,6 +17,7 @@ router.post('/register', isLoggedIn, async (req, res) => {
         qualification,
         experience,
         languages,
+        userID,
       } = req.body;
   
       
@@ -28,19 +29,15 @@ router.post('/register', isLoggedIn, async (req, res) => {
         qualification,
         experience,
         languages,
+        userID,
       });
   
       
       const savedTutor = await newTutor.save();
-  
-      const userId = req.user._id;
-  
-      if (!userId) {
-        return res.redirect(FRONT_URL + "/login");
-      }
-  
-      
-      await User.findByIdAndUpdate(userId, { tutorID: savedTutor._id });
+
+      let updateUser= await User.findByIdAndUpdate(userID,{tutorID: savedTutor._id});
+      console.log("----",updateUser);
+
   
       
       res.status(201).json(savedTutor);

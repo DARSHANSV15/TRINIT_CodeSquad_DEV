@@ -15,6 +15,11 @@ let tutorSchema= new Schema({
         type: String,
     },
 
+    userID:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+
     qualification: {type: String},
     experience: {
         type: Number,

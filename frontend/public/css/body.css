@@ -1,12 +1,22 @@
 *{
-    overflow: hidden;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+
+body{
+    overflow: hidden;  
+    margin:0; 
 }
 
 .sidebar-nav{
     height: calc(100vh - 3rem);
     display: none;
     visibility: hidden;
+}
+
+.main-cnt{
+    overflow: auto;
+    height: calc(100vh - 5rem);
+    
 }
 
 .container-fluid .navbar-toggler{

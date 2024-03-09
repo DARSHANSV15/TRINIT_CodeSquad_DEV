@@ -12,13 +12,20 @@ const lessonSchema = new mongoose.Schema({
   tutor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Tutor', 
-    required: true,
+    
   },
-  student: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Student', 
-    required: true,
-  },
+  // student: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Student', 
+  //   required: true,
+  // },
+  student: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student"
+      },
+    ]
+  ,
   scheduledTime: {
     type: Date,
     required: true,
@@ -31,14 +38,17 @@ const lessonSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  price:{
+    type: String,
+  },
   lessonMaterials: [{
     title: { type: String },
     url: { type: String },
   }],
-  feedback: {
-    rating: { type: Number, min: 1, max: 5 },
-    comment: { type: String },
-  },
+  // feedback: {
+  //   rating: { type: Number, min: 1, max: 5 },
+  //   comment: { type: String },
+  // },
 });
 
 const Lesson = mongoose.model('Lesson', lessonSchema);

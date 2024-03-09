@@ -23,8 +23,8 @@ const Navbar = () => {
                             <Link className="list-group-item btn btn-light" to={"/logout"}><i className="fa-solid fa-arrow-right-from-bracket" style={{ fontSize: "1.2rem" }}></i> <span>Logout</span></Link>
                         </ul>
                         <ul className="list-group border-bottom">
-                            <Link className="list-group-item btn btn-light">An item</Link>
-                            <Link className="list-group-item btn btn-light">A second item</Link>
+                            <Link className="list-group-item btn btn-light" to={"/lesson"}>Lessons</Link>
+                            <Link className="list-group-item btn btn-light" to={"/lesson/create"}>Add lessons</Link>
                             <Link className="list-group-item btn btn-light">A third item</Link>
                             <Link className="list-group-item btn btn-light">A fourth item</Link>
                             <Link className="list-group-item btn btn-light">And a fifth one</Link>

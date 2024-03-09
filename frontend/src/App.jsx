@@ -8,7 +8,9 @@ import Home from './pages/Home';
 import UserForm from './pages/UserForm';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-
+import CreateLesson from './pages/CreateLesson';
+import IndexLesson from './pages/IndexLesson';
+import LessonDetails from './pages/LessonDetails';
 
 
 function App() {
@@ -52,7 +54,10 @@ function App() {
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/signup' element={<Signup/>}></Route>
       <Route path='/dashboard' element={user ? <Dashboard user={user} /> : <Navigate to="/login" />}/>
-      <Route path='/role' element={<UserForm />}/>
+      <Route path='/role' element={<UserForm user={user}/>}/>
+      <Route path='/lesson/create' element={<CreateLesson user={user} />}/>
+      <Route path='/lesson' element={<IndexLesson user={user}/>}/>
+      <Route path="/lesson/:lessonId" element={<LessonDetails/>} />
     </Routes>
   )
 }

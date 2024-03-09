@@ -14,10 +14,11 @@ const User=require("./models/user")
 const {FRONT_URL,BACK_URL}=require("./config/url");
 const passport = require("passport");
 const session = require("express-session");
-const { isLoggedIn,asyncWrap } = require("./middlewares");
+const { asyncWrap } = require("./middlewares");
 
 const oauthRouter=require("./routes/oauth");
 const tutorRouter=require("./routes/tutor");
+const lessonRouter=require("./routes/lesson");
 
 app.use(express.urlencoded({extended: true}));
 cookieparser.parse("foo=bar");
@@ -71,6 +72,8 @@ app.get("/",(req,res)=>{
 })
 
 
+
+
 app.post("/login", passport.authenticate("local",{
         successRedirect: "/login/success",
         failureRedirect: "/login/failure"
@@ -121,9 +124,9 @@ app.post("/signup",asyncWrap(async(req,res,next)=>{
     }
     
 }));
-
 app.use("/auth",oauthRouter);
 app.use("/tutor",tutorRouter);
+app.use("/lesson",lessonRouter);
 
 app.get("/logout",(req,res,next)=>{
     req.logout((err)=>{
